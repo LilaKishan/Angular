@@ -1,0 +1,20 @@
+  <div class="container container-fluid">
+    <div class="card row" >
+      <div class="card col-4 m-auto items-center text-center border border-dark">
+        <img [src]="data.studentimg" class="card-img-top" width="200px" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{data.name}}</h5>
+          <h6 class="card-text">{{data.department}}</h6>
+          <h6 class="card-text">{{data.rollno}}</h6>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <div class="container">
+            <div class="row">
+          <button class="btn btn-outline-success col" routerLink="/api">back</button>
+          <button class="btn btn-outline-danger col" (click)="delete()">Delete</button>
+          <button class="btn btn-outline-warning col" routerLink="/api/edit/{{data.id}}">Edit</button>
+        </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

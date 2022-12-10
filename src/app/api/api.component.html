@@ -1,0 +1,14 @@
+<p>api Here!</p>
+<div class="container container-fluid ">
+  <div class="row ms-auto ">
+    <div class="card col-2 text-center ms-3 mb-3 align-items-center" *ngFor="let stu of data">
+      <img [src]="stu.studentimg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{stu.name}}</h3>
+        <h5 class="card-title">{{stu.rollno}}</h5>
+        <p class="card-text">{{stu.department}}</p>
+        <a routerLink="/api/{{stu.id}}" class="btn btn-primary">View More</a>
+      </div>
+    </div>
+  </div>
+</div>

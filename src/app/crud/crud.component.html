@@ -1,0 +1,86 @@
+<p>crud works!</p>
+<form [formGroup]="myForm" (ngSubmit)="insertdata()">
+  <table border="1px" class="m-auto mb-3 ">
+    <tr>
+      <td>ID</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyID" /><br>
+        <span *ngIf="myForm.controls.FacultyID.invalid && myForm.controls.FacultyID.touched" style="color: red;"> plz enter id</span>
+      </td>
+    </tr>
+    <tr>
+      <td>FacultyName</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyName"/><br>
+        <span *ngIf="myForm.controls.FacultyName.invalid && myForm.controls.FacultyName.touched" style="color: red;"> plz enter name</span>
+      </td>
+    </tr>
+    <tr>
+      <td>FacultyDesignation</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyDesignation" />
+        <br>
+        <span *ngIf="myForm.controls.FacultyDesignation.invalid && myForm.controls.FacultyDesignation.touched" style="color: red;"> plz enter FacultyDesignation</span></td>
+    </tr>
+    <tr>
+      <td>FacultyEducationQualification</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyEducationQualification" />
+        <br>
+        <span *ngIf="myForm.controls.FacultyEducationQualification.invalid && myForm.controls.FacultyEducationQualification.touched" style="color: red;"> plz enter FacultyEducationQualification</span></td>
+    </tr>
+    <tr>
+      <td>FacultyExperience</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyExperience" />
+        <br>
+        <span *ngIf="myForm.controls.FacultyExperience.invalid && myForm.controls.FacultyExperience.touched" style="color: red;"> plz enter FacultyExperience</span></td>
+    </tr>
+    <tr>
+      <td>FacultyWorkingSince</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyWorkingSince" />
+        <br>
+        <span *ngIf="myForm.controls.FacultyWorkingSince.invalid && myForm.controls.FacultyWorkingSince.touched" style="color: red;"> plz enter FacultyWorkingSince</span>
+      </td>
+    </tr>
+    <tr>
+      <td>FacultyImagepath</td>
+      <td>:</td>
+      <td><input type="text" formControlName="FacultyImage" />
+        <br>
+        <span *ngIf="myForm.controls.FacultyImage.invalid && myForm.controls.FacultyImage.touched" style="color: red;"> plz enter FacultyImagepath</span>
+      </td>
+    </tr>
+    <tr>
+      <td *ngIf="idToEdit==-1"><input type="submit" [disabled]="!myForm.valid"  class="btn btn-outline-success" value="add faculty"></td>
+      <td colspan="2" *ngIf="idToEdit!=-1"><input class="btn btn-outline-success" type="submit" value="edit faculty"></td>
+    </tr>
+  </table>
+</form>
+<div>
+  <table border="1px" class="m-auto table text-center">
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>EducationQualification</th>
+      <th>Experience</th>
+      <th>WorkingSince</th>
+      <th>Edit</th>
+      <th>delete</th>
+    </tr>
+    <tr *ngFor="let fac of faculties;let i=index" class="table">
+      <td>{{fac.FacultyID}}</td>
+      <td><img [src]="fac.FacultyImage" width="100px"></td>
+      <td>{{fac.FacultyName}}</td>
+      <td>{{fac.FacultyDesignation}}</td>
+      <td>{{fac.FacultyEducationQualification}}</td>
+      <td>{{fac.FacultyExperience}}</td>
+      <td>{{fac.FacultyWorkingSince}}</td>
+      <td><input type="submit" class="btn btn-outline-success" (click)="editdata(i)" value="edit"></td>
+      <td><input type="submit" class="btn btn-outline-success" (click)="deletedata(i)" value="delete"></td>
+    </tr>
+  </table>
+</div>

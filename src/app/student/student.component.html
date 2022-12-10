@@ -1,0 +1,17 @@
+<div>
+  <h1>Student page</h1>
+</div>
+
+<div>
+  <div class="row g-2 m-2">
+    <div *ngFor="let stu of student" class="card col-3 text-center">
+      <img [src]="stu.avatar" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ stu.name}}</h5>
+        <p class="card-text">{{stu.department}}</p>
+        <p class="card-text">{{stu.city}}</p>
+        <a routerLink="/student/{{stu.id}}" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>

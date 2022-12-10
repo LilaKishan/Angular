@@ -1,0 +1,30 @@
+<p>add-student works!</p>
+<div class="container container-fluid">
+    <form class="row g-3 border border-primary p-4" [formGroup]="myForm" (ngSubmit)="insert()">
+        <h2 class="text-center">Add Info</h2>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Id</label>
+          <input type="text" class="form-control" id="inputEmail4" formControlName="id" placeholder="enter id">
+        </div>
+        <div class="col-md-6">
+          <label for="inputtext4" class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="name" placeholder="enter name">
+        </div>
+        <div class="col-md-6">
+          <label for="inputAddress" class="form-label">rollno</label>
+          <input type="text" class="form-control" formControlName="rollno" placeholder="enter rollno">
+        </div>
+        <div class="col-md-6">
+          <label for="inputAddress2" class="form-label">Department</label>
+          <input type="text" class="form-control" formControlName="department" placeholder="enter department name">
+        </div>
+        <div class="col-md-8">
+          <label for="inputImage" class="form-label">Image</label>
+          <input type="text" class="form-control" formControlName="studentimg" placeholder="enter imagePath">
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" *ngIf="id==-1" class="btn btn-primary ">Add Info</button>
+          <button type="submit" *ngIf="id>0" class="btn btn-primary">Edit Info</button>
+        </div>
+      </form>
+</div>

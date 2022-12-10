@@ -1,0 +1,15 @@
+<h1>
+    Product Page
+</h1>
+<div class="row g-2 m-2">
+    <div *ngFor="let product of products" class="card col-3 ">
+        <img [src]="product.ProductImage" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.ProductName}}</h5>
+            <p class="card-text">{{product.ProductDescription}}</p>
+            <p class="card-text">{{product.createdAt}}</p>
+            <p class="card-text">{{product.ProductPrice}}</p>
+            <a href="#" class="btn btn-primary">Details</a>
+        </div>
+    </div>
+</div>

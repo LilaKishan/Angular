@@ -1,0 +1,14 @@
+<div>
+  <h1>Faculty page</h1>
+</div>
+<div class="row g-2 m-2">
+  <div *ngFor="let fac of faculties" class="card col-3 text-center">
+    <img [src]="fac.FacultyImage" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title align-middle">{{ fac.FacultyName}}</h5>
+      <p class="card-text align-middle">{{fac.FacultyDesignation}}</p>
+      <p class="card-text align-middle">{{fac.FacultyEducationQualification}}</p>
+      <a href="#" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+</div>
